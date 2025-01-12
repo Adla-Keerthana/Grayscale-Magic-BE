@@ -7,7 +7,7 @@ app = FastAPI()
 # Add CORS middleware for local development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://grayscale-magic-fe.vercel.app/login"],  # Local frontend URL (adjust port as needed)
+    allow_origins=["https://grayscale-magic-fe.vercel.app"],  # Local frontend URL (adjust port as needed)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -16,6 +16,6 @@ app.add_middleware(
 app.include_router(auth_routes.router, prefix="/auth", tags=["auth"])
 app.include_router(protected_routes.router, prefix="/protected", tags=["protected"])
 
-@app.get("/")
+@app.get("/login")
 async def root():
     return {"message": "Hello, World!"}
