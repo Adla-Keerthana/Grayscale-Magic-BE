@@ -7,7 +7,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://grayscale-magic-fe.vercel.app/login"],  # Frontend URL
+    allow_origins=["https://grayscale-magic-fe.vercel.app"],  # Frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
