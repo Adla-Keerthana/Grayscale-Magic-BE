@@ -4,10 +4,10 @@ from app.routes import auth_routes, protected_routes
 
 app = FastAPI()
 
-# Add CORS middleware
+# Add CORS middleware for local development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://grayscale-magic-fe.vercel.app","http://localhost:5173/"],  # Frontend URL
+    allow_origins=["https://grayscale-magic-fe.vercel.app"],  # Local frontend URL (adjust port as needed)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
